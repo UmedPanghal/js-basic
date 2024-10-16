@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <title>Document</title>
+    <style>
+        #container {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .new-element {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+
+        }
+
+        button {
+            padding: 10px 12px;
+            border-radius: 50px;
+            background-color: blue;
+            color: white;
+            cursor: pointer;
+            border: 2px solid lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="createnewelement">click me !</button>
+    <div id="container"></div>
+
+</body>
+
+</html>
+<script>
+    // creatbtn click function 
+    document.getElementById("createnewelement").addEventListener("click", function () {
+        // create new element
+        const newElement = document.createElement("div");
+        // new element classname
+        newElement.className = "new-element";
+
+        // random color change
+        const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+        //  value create elemnt backgroundcolor 
+        newElement.style.backgroundColor = randomColor;
+        // append child
+        document.getElementById("container").appendChild(newElement);
+    });
+</script>
